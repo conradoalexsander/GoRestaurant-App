@@ -4,4 +4,10 @@ const formatValue = (value: number): string =>
     currency: 'BRL',
   }).format(value);
 
+export const unformatValue = (value: string): number => {
+  const numberValue = parseFloat(value.replace('R$', '').replace(',', ''));
+
+  return numberValue;
+};
+
 export default formatValue;
